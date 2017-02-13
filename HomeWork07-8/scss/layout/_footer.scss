@@ -1,0 +1,84 @@
+.footer{
+	position: relative;
+	@include media("≥phone") {
+		background: #ececec;
+		border-top: 1px solid #e6e6e6;
+			box-shadow: inset 0px 1px 0px #fefefe;
+	}
+	.container{
+		overflow: hidden;
+	}
+	>.container{
+		padding-top: 75px;
+		padding-bottom: 37px;
+		@include media("≥desktop") {
+			padding-top: 92px;
+		}
+	}
+	&__logo{
+		margin-top: 5px;
+		margin-bottom: 10px;
+	}
+	&__panel{
+		background: url(../images/bg-footer-panel.jpg) no-repeat;
+		background-size: cover;
+		padding: 41px 0;
+		background-position: 50% 50%;
+		text-align: center;
+		@include media("≥phone") {
+			padding: 36px 0;
+		}
+		&__nav-menu{
+			font-size: 20px;
+			justify-content: space-between;
+			margin-bottom: 22px;
+			@include media("≥tablet") {
+				justify-content: flex-start;
+				margin-left: -6px;
+			}
+			@include media("≥desktop") {
+				float: left;
+				width: 80%;
+			}
+			li{
+				@include media("≥desktop") {
+					padding-left: 31px;
+				}
+			}
+		}
+	}
+	.development{
+		color: $white;
+		font-size: 12px;
+		text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
+		@include media("≥tablet") {
+			float: right;
+			padding-top: 15px;
+		}
+		a{
+			font-weight: 800;
+			text-decoration: none;
+			color: $white;
+		}
+	}
+	.column{
+		padding-bottom: 34px;
+		@include media("≥desktop") {
+			padding-bottom: 40px;
+		}
+		h3{
+			font-size: 24px;
+			margin-bottom: 3px;
+			@include media("≥desktop") {
+				font-size: 30px;
+			}
+		}
+	}
+}
+.copyright{
+	font-family: $base-font-serif;
+	color: #c5c5c5;
+	display: block;
+	margin-bottom: 7px;
+}
+

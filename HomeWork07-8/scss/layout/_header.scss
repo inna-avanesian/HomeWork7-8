@@ -1,0 +1,152 @@
+#header{
+	text-align: center;
+	padding-top: 70px;
+	padding-bottom: 50px;
+	position: relative;
+	@include media("≥phone") {
+		padding-bottom: 28px;
+	}
+	@include media("≥tablet") {
+		text-align: left;
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+	.container{
+		overflow: visible;
+		&:after{
+			content:" ";
+			clear:both;
+			display:block;
+		}
+	}
+}
+
+.header__logo {
+	margin-bottom: 34px;
+	@include media("≥desktop") {
+		float: left;
+	}
+	img{
+		vertical-align: top;
+	}
+}
+
+.header__nav{
+	text-shadow: 0 0 0;
+	@include media("≥desktop") {
+		float: right;
+	}
+	&__opener {
+		text-transform: uppercase;
+		font-size: 24px;
+		line-height: 27px;
+		color: $white;
+		text-decoration: none;
+		border-bottom: 2px solid $violet;
+		display: none;
+		font-family: 'league_gothic';
+		padding: 0 6px 3px;
+		@include media("<tablet") {
+			display: inline-block;
+		}
+	}
+
+	.header__nav__drop {
+		overflow:hidden;
+		position:absolute;
+		top:131px;
+		left:50%;
+		transform: translateX(-50%);
+		z-index:999;
+		max-height: 0;
+		width: 246px;
+		transition: all 0.25s linear;
+
+		@include media("≥tablet") {
+			max-height: 1000px;
+			width: auto;
+			position: static;
+			left: auto;
+			transform: translateX(0);
+			margin-top: -4px;
+		}
+
+		@include media("≥desktop") {
+			margin-top: 0;
+		}
+
+		.nav-active &{
+			max-height: 1000px;
+		}
+	}
+
+	.nav-menu{
+		background-color: rgba(54, 41, 62, 0.9);
+		border: 1px solid #051116;
+		border-radius: 10px;
+		box-shadow: inset 0px 1px 3px #6d507a;
+		@include media("≥phone") {
+			display: block;
+		}
+		@include media("≥tablet") {
+			display: flex;
+			margin-left: -6px;
+			background: none;
+			border: none;
+			border-radius: 	0;
+			box-shadow: inset 0 0 0;
+		}
+		@include media("≥desktop") {
+			margin: 0 -3px 0 0;
+			float: right;
+		}
+
+		li{
+			background: url(../images/bg-menu-li.png) repeat-x;
+			@include media("≥tablet") {
+				background: none;
+			}
+			&:first-child{
+				background: none;
+			}
+			&:last-child a{
+				border-radius: 0 0 8px 8px;
+			}
+			a:hover{
+				background-color: rgba(	0, 0, 0, 0.3);
+				@include media("≥tablet") {
+					background: none;
+				}
+			}
+			&.active a:hover{
+				background: none;
+			}
+			&.active a{
+				padding-top: 11px;
+				padding-bottom: 3px;
+				margin-bottom: 3px;
+				display: inline-block;
+				@include media("≥tablet") {
+					padding: 2px 6px 3px;
+				}
+			}
+		}
+
+		a{
+			display: block;
+			@include media("≥tablet") {
+				padding-bottom: 1px;
+				display: inline-block;
+				padding: 2px 6px 3px;
+				white-space: nowrap;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
